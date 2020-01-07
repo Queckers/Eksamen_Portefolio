@@ -1,0 +1,89 @@
+/* KLARGØRING TIL GRID */
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color:white;
+}
+
+header, section, aside, footer {
+    padding: 2.2em;
+}
+
+#red {background-color: indianred;}
+#blue {background-color: indianred;}
+aside {background-color: indianred;}
+#green {background-color: indianred;}
+
+/* 
+----------------------------------------
+GRID STARTER HER
+----------------------------------------
+*/
+
+header {grid-area: header}
+#red {grid-area: s1}
+#blue {grid-area: s2}
+aside {grid-area: aside}
+#green {grid-area: s3}
+footer {grid-area: footer} 
+
+/* 
+----------------------------------------
+MOBILE VERSION
+----------------------------------------
+*/
+
+body {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-areas:
+    "header header header"
+    ". s1 ."
+    ". s1 ."
+    ". s2 ."
+    ". s2 ."
+    "footer footer footer"
+}
+
+/* 
+----------------------------------------
+TABLET VERSION
+----------------------------------------
+*/
+@media only screen and (min-width: 450px) {
+    body {
+        grid-template-columns: 1fr 400px 1fr;
+         grid-template-areas:
+    "header header header"
+    ". s1 ."
+    ". s1 ."
+    ". s2 ."
+    ". s2 ."
+    "footer footer footer"
+    }
+}
+
+/* 
+----------------------------------------
+DESKTOP VERSION
+----------------------------------------
+*/
+@media only screen and (min-width: 1000px) {
+    body {
+        grid-template-columns: 1fr 400px 400px 1fr;
+        grid-template-areas:
+        "header header header header"
+        ". s1 s1 ."
+        ". s2 s2 ."
+        ". s2 s2 ."
+        ". s3 s3 ."
+        "footer footer footer footer"
+    }
+}
+
+
